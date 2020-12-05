@@ -11,6 +11,7 @@ public class HelloWorldController {
 
     private final HelloService helloService;
 
+    // http://localhost:8080/hello
     @GetMapping("/hello")
     public String hello() {
         return helloService.fetchHelloMessage();

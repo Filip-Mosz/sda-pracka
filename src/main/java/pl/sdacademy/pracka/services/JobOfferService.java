@@ -7,12 +7,18 @@ import pl.sdacademy.pracka.entities.JobOfferEntity;
 import pl.sdacademy.pracka.repositories.JobOfferRepository;
 
 import javax.annotation.PostConstruct;
+import java.util.List;
 
 @Service
 @Log4j2
 @RequiredArgsConstructor
 public class JobOfferService {
     private final JobOfferRepository jobOfferRepository;
+
+    public List<JobOfferEntity> getAllJobOffers() {
+        final List<JobOfferEntity> allEntities = jobOfferRepository.findAll();
+        return allEntities;
+    }
 
     @PostConstruct
     void fillWithDummyData() {
